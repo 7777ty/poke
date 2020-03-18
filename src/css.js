@@ -10,6 +10,9 @@ body{
     background-color: #FF5757;
 }
 
+
+
+
 .bench{
     position: relative;
     width:940px;

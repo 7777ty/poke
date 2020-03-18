@@ -1,4 +1,5 @@
 import string from './css.js'
+import mobileString from  './mobileCSS'
 const demo = document.querySelector('#demo');
 const demo2 = document.querySelector('#demo2');
 let n = 1;
@@ -7,8 +8,15 @@ let id;
 
 const player = {
     init: () => {
-        demo.innerText = string.substr(0, n);
-        demo2.innerHTML = string.substr(0, n);
+        if(window.document.documentElement.clientWidth>=500){
+            demo.innerText = string.substr(0, n);
+            demo2.innerHTML = string.substr(0, n);
+        } else{
+            demo.innerText = mobileString.substr(0, n);
+            demo2.innerHTML = mobileString.substr(0, n);
+
+        }
+
         player.play();
         player.bindEvents();
     },
@@ -28,8 +36,13 @@ const player = {
             window.clearInterval(id);
             return
         }
-        demo.innerText = string.substr(0, n);
-        demo2.innerHTML = string.substr(0, n);
+        if(window.document.documentElement.clientWidth>=500){
+            demo.innerText = string.substr(0, n);
+            demo2.innerHTML = string.substr(0, n);
+        } else{
+            demo.innerText = mobileString.substr(0, n);
+            demo2.innerHTML = mobileString.substr(0, n);
+        }
         demo.scrollTop = demo.scrollHeight;
     },
     play: () => {
@@ -41,11 +54,6 @@ const player = {
     slow: () => {
         player.pause();
         time = 100;
-        player.play();
-    },
-    normal: () => {
-        player.pause();
-        time = 50;
         player.play();
     },
     normal: () => {

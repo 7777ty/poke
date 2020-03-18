@@ -1,4 +1,5 @@
-* {
+const mobileString = `
+#html * {
     margin: 0;
     padding: 0;
     box-sizing:border-box;
@@ -98,11 +99,11 @@ body{
 
 @keyframes waveTail{
     0%, 100% { transform: rotate(-25deg) }
-	50% { transform: rotate(-35deg) }
+\t50% { transform: rotate(-35deg) }
 }
 @keyframes flicker {
-	0% { transform: skewY(0deg) }
-	50% { transform: skewY(10deg) }
+\t0% { transform: skewY(0deg) }
+\t50% { transform: skewY(10deg) }
 }
 @keyframes squish {
     0% {
@@ -394,3 +395,6 @@ body{
     transform: rotate(40deg);
     transition: 1s;
 }
+`
+
+export default mobileString;
